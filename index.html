@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Us 💕 — a few questions</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#ffe4ec;--bg2:#ffc6d9;--card:#ffffffe0;--ink:#4a1d2e;--soft:#8a4a60;--pink:#e83e72;--pink2:#ff7aa2;--chip:#fff;--line:#f6b8cc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2a0f1c;--bg2:#431529;--card:#4a1d2ee8;--ink:#ffe9f0;--soft:#f3b6c9;--pink:#ff5c8f;--pink2:#ff8fb1;--chip:#5a2338;--line:#7a3350}}
+:root[data-theme="dark"]{--bg1:#2a0f1c;--bg2:#431529;--card:#4a1d2ee8;--ink:#ffe9f0;--soft:#f3b6c9;--pink:#ff5c8f;--pink2:#ff8fb1;--chip:#5a2338;--line:#7a3350}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:'Poppins',system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:linear-gradient(160deg,var(--bg1),var(--bg2));display:flex;align-items:center;justify-content:center;padding:20px;overflow-x:hidden}
+.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.hearts span{position:absolute;bottom:-40px;opacity:.5;animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+.wrap{position:relative;z-index:1;width:100%;max-width:420px}
+.dots{display:flex;gap:7px;justify-content:center;margin-bottom:14px}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--line);transition:.3s}
+.dots i.on{background:var(--pink);width:26px;border-radius:9px}
+.card{background:var(--card);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:28px;padding:34px 24px;text-align:center;box-shadow:0 20px 50px #e83e7233;min-height:420px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.scene{display:none;width:100%;flex-direction:column;align-items:center}
+.scene.on{display:flex;animation:in .6s ease}
+@keyframes in{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.big{font-size:64px;display:inline-block;animation:beat 1.2s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}20%{transform:scale(1.18)}40%{transform:scale(1)}60%{transform:scale(1.12)}}
+h1{font-family:'Dancing Script',cursive,serif;font-size:40px;margin:6px 0 12px;color:var(--pink);line-height:1.1}
+p{margin:0 0 14px;line-height:1.65;color:var(--soft);font-size:15.5px}
+.line{opacity:0;transform:translateY(10px);transition:.7s}
+.line.show{opacity:1;transform:none}
+.when{display:inline-block;background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:600;color:var(--ink);margin:4px 0 16px;font-size:14px}
+button{font:inherit;cursor:pointer;border:0;border-radius:999px;padding:14px 26px;font-weight:600;font-size:16px;transition:transform .15s}
+button:active{transform:scale(.95)}
+.go{background:linear-gradient(135deg,var(--pink),var(--pink2));color:#fff;box-shadow:0 8px 20px #e83e7255;margin-top:10px}
+.no{background:var(--chip);color:var(--soft);border:1px solid var(--line)}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;min-height:64px;align-items:center}
+.hide{display:none!important}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:4px 0 14px}
+.chip{background:var(--chip);color:var(--ink);border:1px solid var(--line);padding:10px 16px;font-size:14px}
+.chip.on{background:var(--pink);color:#fff;border-color:var(--pink)}
+.reason{background:var(--chip);border:1px solid var(--line);border-radius:20px;padding:20px;width:100%;margin-bottom:14px;min-height:130px;display:flex;flex-direction:column;justify-content:center}
+.reason b{font-size:34px;display:block;margin-bottom:6px}
+.reason span{color:var(--ink);font-size:16px;line-height:1.5}
+.count{font-family:'Dancing Script',cursive,serif;font-size:90px;color:var(--pink);line-height:1;margin:10px 0}
+.sign{font-family:'Dancing Script',cursive,serif;font-size:26px;color:var(--pink);margin-top:10px}
+.fine{font-size:12.5px;margin:12px 0 0;opacity:.85}
+
+.card{justify-content:flex-start;min-height:0}
+body{align-items:flex-start}
+.bar{height:8px;background:var(--line);border-radius:9px;margin-bottom:14px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pink),var(--pink2));transition:width .4s}
+.step{font-size:12.5px;color:var(--soft);text-align:center;margin:-6px 0 12px}
+.q{display:block;text-align:left;font-weight:500;color:var(--ink);margin:16px 0 8px;font-size:15px;line-height:1.45;width:100%}
+input[type=text],textarea{width:100%;font:inherit;font-size:15px;color:var(--ink);background:var(--chip);border:1px solid var(--line);border-radius:16px;padding:12px 14px;outline:none}
+textarea{min-height:92px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--pink)}
+input[type=range]{width:100%;accent-color:var(--pink)}
+.rl{display:flex;justify-content:space-between;font-size:12px;color:var(--soft)}
+.chips{justify-content:flex-start;width:100%}
+.chip{padding:9px 14px;font-size:13.5px}
+.nav{display:flex;gap:10px;justify-content:space-between;width:100%;margin-top:22px}
+.nav .go{margin:0;flex:1}
+</style>
+</head>
+<body>
+<div class="hearts" id="hearts" aria-hidden="true"></div>
+<div class="wrap">
+  <div class="bar"><i id="bar"></i></div>
+  <main class="card"><div id="stage" style="width:100%"></div></main>
+</div>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var hs=$('hearts'),em=['💗','💕','💖','🌸','✨'];
+for(var i=0;i<14;i++){var s=document.createElement('span');s.textContent=em[i%5];s.style.left=Math.random()*100+'%';s.style.fontSize=(14+Math.random()*22)+'px';s.style.animationDuration=(8+Math.random()*10)+'s';s.style.animationDelay=(-Math.random()*14)+'s';hs.appendChild(s);}
+
+var A={},qs={};
+function T(id,l,ph){return{id:id,k:'text',l:l,ph:ph||''}}
+function R(id,l,ph){return{id:id,k:'area',l:l,ph:ph||'Write whatever’s in your heart…'}}
+function C(id,l,o){return{id:id,k:'one',l:l,o:o}}
+function M(id,l,o){return{id:id,k:'multi',l:l,o:o}}
+function S(id,l,a,b){return{id:id,k:'scale',l:l,a:a,b:b}}
+var P=[
+{e:'💌',t:'Just us, two minutes',p:'I made this for you, love. There are no right or wrong answers — only honest ones. Take your time, and answer from the heart. 💗',q:[T('name','What should I call you today?','Your name or a nickname')]},
+{e:'🥰',t:'What you love about us',p:'Let’s start with the good stuff.',q:[M('love_about_us','What do you love most about our relationship?',['How we laugh','Feeling safe','Our talks','Affection','Being understood','Our adventures','Support','Small moments']),R('love_about_me','What do you love most about me, specifically?'),R('proud','What’s one thing about us you’re proud of?')]},
+{e:'📸',t:'Our memories',p:'Some moments stay with us forever.',q:[R('fav_memory','What’s your favourite memory of us?'),R('first_thought','What did you think the first time you met me?'),T('song','A song that reminds you of us:')]},
+{e:'💞',t:'How I make you feel',p:'Tell me how my love lands for you.',q:[M('feel','When we’re good, I make you feel…',['Happy','Safe','Wanted','Calm','Excited','Silly','Loved','Seen']),S('happiness','How happy are you in our relationship right now?','Not very','Completely'),R('feel_most_loved','When do you feel most loved by me?')]},
+{e:'🫶',t:'The honest page',p:'I’m asking because I want to understand you, not to blame you. Please be gentle with me and brutally honest with yourself.',q:[S('commit','How committed do you feel to us right now?','Unsure','All in'),M('hold_back','What, if anything, makes it hard to commit fully?',['Fear of getting hurt','Past experiences','Timing / life stress','Not sure what I want','Trust','Communication','Feeling pressured','Nothing, I’m committed']),R('hold_back_more','In your own words, what’s holding you back? (I promise I’ll listen, not argue.)'),R('hurt','Is there anything I’ve done that made you pull away?')]},
+{e:'🌱',t:'What would help',p:'Let’s figure out what you need.',q:[M('need','What would help you feel more secure with me?',['More reassurance','More time together','Honest talks','Less pressure','Clear plans','Patience','Space when needed','Consistency']),R('need_from_me','What do you need from me that you’re not getting?'),R('promise_you','What could you do to show up more for us?')]},
+{e:'📊',t:'How are we doing?',p:'Slide to rate each one, 1 to 10.',q:[S('r_comm','Communication','Poor','Great'),S('r_time','Quality time','Poor','Great'),S('r_aff','Affection','Poor','Great'),S('r_trust','Trust','Poor','Great'),S('r_fun','Fun & laughter','Poor','Great'),S('r_future','Clarity about our future','Foggy','Crystal clear')]},
+{e:'🧭',t:'How we act from now',p:'Your say matters. Let’s build this together.',q:[C('see','How often would you like us to see each other?',['Every day','A few times a week','Weekly','Whenever it feels right']),C('fight','When we disagree, what works best for you?',['Talk it out now','Cool off, then talk','Write it down','Hug first, talk later']),R('do_more','One thing I should do MORE of:'),R('do_less','One thing I should do LESS of:'),R('us_do','One thing we should start doing together:')]},
+{e:'🌹',t:'Romantic corner',p:'Okay, my favourite page. 😏',q:[R('perfect_date','Describe your perfect date with me, from start to finish.'),C('lang','Which makes you feel most loved?',['Words','Quality time','Gifts','Acts of service','Touch']),T('kiss','Your favourite kind of kiss? 😘'),R('romantic','Something romantic you’d love me to do for you:'),R('miss','What do you miss about me when we’re apart?')]},
+{e:'🔮',t:'Dreams & the future',p:'Peek into tomorrow with me.',q:[R('year','Where do you see us a year from now?'),R('trip','Dream trip we should take together:'),C('future','Do you see a long-term future with me?',['Yes, definitely','I hope so','I’m not sure yet','I need to think']),R('fear','What scares you most about the future of us?')]},
+{e:'🎲',t:'Fun & silly',p:'Let’s lighten the mood.',q:[C('wyr','Would you rather…',['Cosy night in with me','Spontaneous road trip','Dancing all night','Cooking together']),T('nick','What nickname should I call you?'),T('animal','If we were two animals, we’d be…'),T('movie','Our movie night pick:'),R('funny','Funniest thing we’ve ever done:')]},
+{e:'✍️',t:'Last words',p:'Almost done. Leave me with something true.',q:[R('unsaid','Something you’ve wanted to tell me but haven’t:'),R('know','One thing you want me to always remember:'),R('promise_me','What’s one promise you’d like us to make to each other?'),C('feel_now','Right now, I feel…',['Hopeful','Nervous','Loved','Relieved','Emotional','Ready to talk'])]},
+{e:'💗',t:'Thank you, love',p:'Tap below to send your answers to me. I’ll read every word with an open heart.',q:[],fin:1}
+];
+P.forEach(function(p){p.q.forEach(function(q){qs[q.id]=q})});
+var cur=0;
+
+function qhtml(q){
+ var h='<label class="q">'+q.l+'</label>';
+ if(q.k==='text')h+='<input type="text" data-id="'+q.id+'" placeholder="'+q.ph+'">';
+ else if(q.k==='area')h+='<textarea data-id="'+q.id+'" placeholder="'+q.ph+'"></textarea>';
+ else if(q.k==='scale')h+='<input type="range" min="1" max="10" value="5" data-id="'+q.id+'"><div class="rl"><span>'+q.a+'</span><b data-v="'+q.id+'">slide →</b><span>'+q.b+'</span></div>';
+ else{h+='<div class="chips">';q.o.forEach(function(o){h+='<button type="button" class="chip" data-c="'+q.id+'" data-o="'+o.replace(/"/g,'&quot;')+'">'+o+'</button>'});h+='</div>'}
+ return h}
+
+function render(){
+ var p=P[cur],h='<div class="step">Page '+(cur+1)+' of '+P.length+'</div><div class="big">'+p.e+'</div><h1>'+p.t+'</h1><p>'+p.p+'</p>';
+ p.q.forEach(function(q){h+=qhtml(q)});
+ if(p.fin){var n=Object.keys(A).length;h+='<p class="fine">You answered '+n+' question'+(n===1?'':'s')+'. 💕</p><div class="nav"><button class="go" id="send">Send to Rodney 💌</button></div><div class="nav" style="margin-top:10px"><button class="no" id="copy" style="flex:1">Copy my answers</button></div><p class="fine" id="note"></p><div class="sign" style="text-align:center">I love you — Rodney</div>'}
+ h+='<div class="nav">'+(cur>0?'<button class="no" id="back">←</button>':'')+(p.fin?'':'<button class="go" id="next">'+(cur===0?'Begin 💗':'Continue →')+'</button>')+'</div>';
+ $('stage').innerHTML=h;
+ p.q.forEach(function(q){var v=A[q.id];if(v==null)return;
+  if(q.k==='text'||q.k==='area')document.querySelector('[data-id="'+q.id+'"]').value=v;
+  else if(q.k==='scale'){document.querySelector('[data-id="'+q.id+'"]').value=v;document.querySelector('[data-v="'+q.id+'"]').textContent=v+'/10'}
+  else[].forEach.call(document.querySelectorAll('[data-c="'+q.id+'"]'),function(b){if([].concat(v).indexOf(b.dataset.o)>-1)b.classList.add('on')})});
+ $('bar').style.width=((cur+1)/P.length*100)+'%';
+ window.scrollTo(0,0)}
+
+$('stage').addEventListener('input',function(e){var id=e.target.dataset.id;if(!id)return;var q=qs[id],v=e.target.value;
+ if(q.k==='scale'){A[id]=+v;document.querySelector('[data-v="'+id+'"]').textContent=v+'/10'}
+ else if(v.trim())A[id]=v.trim();else delete A[id]});
+$('stage').addEventListener('click',function(e){var t=e.target.closest('button');if(!t)return;
+ if(t.id==='next'){cur++;render();return}
+ if(t.id==='back'){cur--;render();return}
+ if(t.id==='send'){send();return}
+ if(t.id==='copy'){var x=compose();(navigator.clipboard?navigator.clipboard.writeText(x):Promise.reject()).then(function(){$('note').textContent='Copied! Paste it in a message to me 💕'}).catch(function(){$('note').textContent='Couldn’t copy — try Send instead.'});return}
+ if(t.dataset.c){var id=t.dataset.c,q=qs[id],o=t.dataset.o;
+  if(q.k==='one'){A[id]=o;[].forEach.call(document.querySelectorAll('[data-c="'+id+'"]'),function(b){b.classList.toggle('on',b===t)})}
+  else{var a=A[id]||[];var i=a.indexOf(o);if(i>-1)a.splice(i,1);else a.push(o);if(a.length)A[id]=a;else delete A[id];t.classList.toggle('on')}}});
+
+function compose(){var out='💌 My answers for Rodney'+(A.name?' — from '+A.name:'')+'\n';
+ P.forEach(function(p){var l=[];p.q.forEach(function(q){if(A[q.id]!=null)l.push('• '+q.l+'\n  → '+[].concat(A[q.id]).join(', ')+(q.k==='scale'?'/10':''))});
+  if(l.length)out+='\n'+p.e+' '+p.t+'\n'+l.join('\n')+'\n'});return out}
+
+var FORMSPREE_URL='https://formspree.io/f/xqpqyzve';
+async function send(){
+ var note=$('note'),btn=$('send');note.textContent='Sending… 💗';btn.disabled=true;
+ var x=compose();
+ try{
+  var r=await fetch(FORMSPREE_URL,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+   body:JSON.stringify({_subject:'💌 Her answers'+(A.name?' — '+A.name:''),name:A.name||'',message:x})});
+  if(!r.ok)throw 0;
+  btn.textContent='Sent ✓';note.textContent='Sent! Thank you, love 💕 I’ll read every word.';
+ }catch(e){
+  btn.disabled=false;
+  note.textContent='Couldn’t send automatically — opening your messages instead 💌';
+  if(navigator.share){navigator.share({text:x}).catch(function(){})}
+  else{location.href='sms:?&body='+encodeURIComponent(x)}
+ }}
+render();
+})();
+</script>
+</body>
+</html>
